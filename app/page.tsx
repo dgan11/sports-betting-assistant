@@ -1,24 +1,21 @@
 import Image from "next/image";
 import { mockData } from "../public/placeholder-data";
 import { getOdds } from "../lib/data";
-import { Button } from "@/components/ui/button"
 import { FAQ } from "@/components/FAQ";
-import OddsTable from "@/components/OddsTable";
-import { TableDemo } from "@/components/TableDemo";
-import { OddsTableDemo } from "@/components/OddsTableDemo";
+import { OddsTable } from "@/components/OddsTable";
 
 export default async function Home() {
+  // Uncomment the following line to fetch real data
   // const odds = await getOdds();
+
+  // For now, use mock data
   const odds = mockData; // mock data
 
   return (
    <main className="min-h-screen p-6">
     <h1 className="p-6 text-xl">Home Page</h1>
-    {/* <OddsTable odds={odds} /> */}
-    {/* <pre>{JSON.stringify(odds, null, 2)}</pre> */}
-    <OddsTableDemo />
+    <OddsTable odds={odds} />
     <br />
-    {/* <TableDemo /> */}
     <div>
       <h1 className="text-2xl font-bold">FAQ</h1>
       <FAQ />
