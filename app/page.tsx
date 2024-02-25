@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { mockData } from "./public/placeholder-data";
-import { getOdds } from "./lib/data";
+import { mockData } from "../public/placeholder-data";
+import { getOdds } from "../lib/data";
 
 export default async function Home() {
   // const odds = await getOdds();
