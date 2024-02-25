@@ -149,12 +149,6 @@ export function OddsTableDemo() {
                 <TableCell key={bookmaker.key}>
                   <h3>{bookmaker.title}</h3>
                   <Table>
-                    {/* <TableHeader>
-                      <TableRow>
-                        <TableHead>Team</TableHead>
-                        <TableHead>Price</TableHead>
-                      </TableRow>
-                    </TableHeader> */}
                     <TableBody>
                       {bookmaker.markets.map((market) => (
                         <TableRow key={market.key}>
@@ -174,12 +168,6 @@ export function OddsTableDemo() {
           </TableRow>
         ))}
       </TableBody>
-      {/* <TableFooter>
-        <TableRow>
-          <TableCell colSpan={3}>Total</TableCell>
-          <TableCell className="text-right">$2,500.00</TableCell>
-        </TableRow>
-      </TableFooter> */}
     </Table>
   )
 }
