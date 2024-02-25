@@ -127,7 +127,7 @@ const odds = [
 export function OddsTableDemo() {
   return (
     <Table>
-      <TableCaption>Upcoming Bets</TableCaption>
+      {/* <TableCaption>Upcoming Bets</TableCaption> */}
       <TableHeader>
         <TableRow>
           <TableHead className="w-[100px]">Sport</TableHead>
@@ -144,27 +144,23 @@ export function OddsTableDemo() {
             <TableCell>{odd.sport_tite}</TableCell>
             <TableCell>{odd.commence_time}</TableCell>
             {/* <TableCell className="text-right">{invoice.totalAmount}</TableCell> */}
-            <TableRow>
-              {odd.bookmakers.map((bookmaker) => (
-                <TableCell key={bookmaker.key}>
-                  <h3>{bookmaker.title}</h3>
-                  <Table>
-                    <TableBody>
-                      {bookmaker.markets.map((market) => (
-                        <TableRow key={market.key}>
-                          {market.outcomes.map((outcome) => (
-                            <TableCell key={outcome.name}>
-                              <p>{outcome.name}</p>
-                              <p>{outcome.price}</p>
-                            </TableCell>
-                          ))}
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableCell>
-              ))}
-            </TableRow>
+            {/* for each bookmaker create a new row */}
+            {odd.bookmakers.map((bookmaker) => (
+              <TableRow key={bookmaker.key}>
+                <TableCell>{bookmaker.title}</TableCell>
+                <TableCell>{bookmaker.last_update}</TableCell>
+                <TableCell>{bookmaker.markets.map((market) => (
+                  <TableRow key={market.key}>
+                    {market.outcomes.map((outcome) => (
+                      <TableCell key={outcome.name}>
+                        <p>{outcome.name}</p>
+                        <p className="flex bg-green-100 rounded-lg w-8 justify-center">{outcome.price}</p>
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))}</TableCell>
+              </TableRow>
+            ))}
           </TableRow>
         ))}
       </TableBody>

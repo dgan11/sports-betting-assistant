@@ -18,8 +18,11 @@ export default async function Home() {
     {/* <pre>{JSON.stringify(odds, null, 2)}</pre> */}
     <OddsTableDemo />
     <br />
-    <TableDemo />
-    <FAQ />
+    {/* <TableDemo /> */}
+    <div>
+      <h1 className="text-2xl font-bold">FAQ</h1>
+      <FAQ />
+    </div>
    </main>
   );
 }
